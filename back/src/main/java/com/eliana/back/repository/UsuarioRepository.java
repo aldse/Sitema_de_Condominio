@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import com.eliana.back.model.UsuarioModel;
 import java.util.List;
 
-public interface UserRepository extends MongoRepository<UsuarioModel, String> {
+public interface UsuarioRepository extends MongoRepository<UsuarioModel, String> {
     @Query("{'name': ?0}")
     List<UsuarioModel> findByName(String name);
 

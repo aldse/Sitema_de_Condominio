@@ -7,8 +7,9 @@ import java.util.Date;
 
 @Data
 @AllArgsConstructor
-@Document("visitante")
-public class VisitanteModel extends UsuarioModel{
-    
+@Document("adm")
+public class AdmCondominioModel extends UsuarioModel{
+    private String historicoFuncionarios;
+    private String registroCameras;
 }
 

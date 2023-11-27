@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-@Document("morador")
+@Document("usuario")
 public class UsuarioModel {
     @Id
     private String id;

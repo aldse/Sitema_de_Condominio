@@ -13,18 +13,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eliana.back.model.UsuarioModel;
-import com.eliana.back.service.UserService;
+import com.eliana.back.service.UsuarioService;
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/usuario")
+public class UsuarioController {
 
     @Autowired
-    private UserService userService;
+    private UsuarioService usuarioService;
 
     @GetMapping("")
-    public List<UsuarioModel> getAllUser() {
-        List<UsuarioModel> listRes = userService.findAll();
+    public List<UsuarioModel> getAllUsuario() {
+        List<UsuarioModel> listRes = usuarioService.findAll();
         return listRes;
     }
 
@@ -34,30 +34,30 @@ public class UserController {
     // }
 
     @GetMapping("/{nome}")
-    public List<UsuarioModel> getUserBynome(@PathVariable String nome) {
-        List<UsuarioModel> listRes = userService.findBynome(nome);
+    public List<UsuarioModel> getUsuarioBynome(@PathVariable String nome) {
+        List<UsuarioModel> listRes = usuarioService.findBynome(nome);
         return listRes;
     }
 
     @GetMapping("/{cpf}/{nome}")
-    public List<UsuarioModel> getUserBycpfAndnome(@PathVariable short cpf, @PathVariable String nome) {
-        List<UsuarioModel> listRes = userService.findBycpfAndnome(cpf, nome);
+    public List<UsuarioModel> getUsuarioBycpfAndnome(@PathVariable short cpf, @PathVariable String nome) {
+        List<UsuarioModel> listRes = usuarioService.findBycpfAndnome(cpf, nome);
         return listRes;
     }
 
     @PostMapping("")
-    public void newUser(@RequestBody UsuarioModel newUser) {
-        userService.save(newUser);
+    public void newUsuario(@RequestBody UsuarioModel newUsuario) {
+        usuarioService.save(newUsuario);
     }
 
     @PutMapping("/{id}")
-    public void putUser(@RequestBody UsuarioModel newUser, @PathVariable String id) {
-        userService.save((String) id, (String) newUser.getNome(), (String) newUser.getCpf());
+    public void putUsuario(@RequestBody UsuarioModel newUsuario, @PathVariable String id) {
+        usuarioService.save((String) id, (String) newUsuario.getNome(), (String) newUsuario.getCpf());
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable String id) {
-        userService.delete(id);
+    public void deleteUsuario(@PathVariable String id) {
+        usuarioService.delete(id);
     }
 
 }

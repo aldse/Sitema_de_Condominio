@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eliana.back.model.UsuarioModel;
-import com.eliana.back.service.UserService;
+import com.eliana.back.service.UsuarioService;
 
 @RestController
 @RequestMapping("/auth")
