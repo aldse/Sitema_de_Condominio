@@ -16,6 +16,14 @@ public class UsuarioModel {
     private String tipo;
     private String cpf;
 
+    public UsuarioModel(String id, String nome, String cpf, String email, String tipo) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.tipo = tipo;
+    }
+
     public UsuarioModel(String id, String nome, String cpf) {
         this.id = id;
         this.nome = nome;
@@ -32,5 +40,9 @@ public class UsuarioModel {
     }
 
     public UsuarioModel() {
+    }
+
+    public Object getPassword() {
+        return null;
     }
 }

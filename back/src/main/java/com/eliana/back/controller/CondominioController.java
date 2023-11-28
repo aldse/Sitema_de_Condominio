@@ -33,8 +33,8 @@ public class CondominioController {
 
         UsuarioModel usuarioResp = usuarioService
                 .save(new UsuarioModel(newCondominioUsuarioDTO.getUsuario().getNome(), newCondominioUsuarioDTO.getUsuario().getCpf()));
-        newCondominioModel.setIdUsuario(new UsuarioModel(UsuarioResp.getId()));
-        CondominioService.save(newCondominioModel);
+        newCondominioModel.setIdUsuario(new UsuarioModel(usuarioResp.getId()));
+        condominioService.save(newCondominioModel);
     }
 
     @PostMapping("/array")

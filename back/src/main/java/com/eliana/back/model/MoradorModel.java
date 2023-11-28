@@ -6,7 +6,6 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-@AllArgsConstructor
 @Document("morador")
 public class MoradorModel extends UsuarioModel {
     private String vagaReservada;

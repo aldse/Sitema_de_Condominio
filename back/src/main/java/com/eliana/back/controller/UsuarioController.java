@@ -28,20 +28,15 @@ public class UsuarioController {
         return listRes;
     }
 
-    // @PostMapping("/file")
-    // public void testeFIle(MultipartFile file) throws IOException {
-    // userService.saveImcpf(file);
-    // }
-
     @GetMapping("/{nome}")
     public List<UsuarioModel> getUsuarioBynome(@PathVariable String nome) {
-        List<UsuarioModel> listRes = usuarioService.findBynome(nome);
+        List<UsuarioModel> listRes = usuarioService.findByNome(nome);
         return listRes;
     }
 
-    @GetMapping("/{cpf}/{nome}")
-    public List<UsuarioModel> getUsuarioBycpfAndnome(@PathVariable short cpf, @PathVariable String nome) {
-        List<UsuarioModel> listRes = usuarioService.findBycpfAndnome(cpf, nome);
+    @GetMapping("/{cpf}/{senha}")
+    public List<UsuarioModel> getUsuarioBycpfAndsenha(@PathVariable String cpf, @PathVariable String senha) {
+        List<UsuarioModel> listRes = usuarioService.findBycpfAndsenha(cpf, senha);
         return listRes;
     }
 

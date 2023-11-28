@@ -8,8 +8,6 @@ import com.eliana.back.model.CondominioModel;
 import java.util.List;
 
 public interface CondominioRepository extends MongoRepository<CondominioModel, String> {
-    // @Query("{'listUsuario.id': ?0 }")
     @Query("{'idUsuario.id': ?0 }")
-    List<CondominioModel> findByUsuarioID(String usuarioId);
-
+    List<CondominioModel> findByUsuarioID(String usuarioId);   
 }

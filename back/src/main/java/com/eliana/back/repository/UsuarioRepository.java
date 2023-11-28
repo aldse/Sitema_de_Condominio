@@ -7,17 +7,13 @@ import com.eliana.back.model.UsuarioModel;
 import java.util.List;
 
 public interface UsuarioRepository extends MongoRepository<UsuarioModel, String> {
-    @Query("{'name': ?0}")
-    List<UsuarioModel> findByName(String name);
+    @Query("{'nome': ?0}")
+    List<UsuarioModel> findByNome(String nome);
 
     @Query("{'email': ?0}")
     UsuarioModel findByEmail(String email);
 
-    @Query("{'name': ?1, 'age': ?0}")
-    List<UsuarioModel> findByAgeAndName(short age, String name);
-
-    List<UsuarioModel> findBynome(String nome);
-
-    List<UsuarioModel> findByAgeAndnome(short age, String nome);
+    @Query("{'cpf': ?0}, 'senha': ?1")
+    List<UsuarioModel> findBycpfAndsenha(String cpf, String senha);
 
 }
